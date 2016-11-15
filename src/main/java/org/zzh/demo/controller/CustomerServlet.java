@@ -12,11 +12,10 @@ import java.io.IOException;
 import java.util.List;
 
 /**
- * Created by 25162 on 2016/10/19.
+ * Created by 25162 on 2016/11/6.
  */
-@WebServlet("/customer_create")
-public class CustomerCreateServlet extends HttpServlet {
-
+@WebServlet("/customer")
+public class CustomerServlet extends HttpServlet {
     private CustomerService customerService;
 
     public void init() throws ServletException {

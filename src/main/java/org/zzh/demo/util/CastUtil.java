@@ -31,7 +31,7 @@ public final class CastUtil {
         return CastUtil.castDouble(obj, 0);
     }
 
-    public static double castLong(Object obj, long defaultValue) {
+    public static long castLong(Object obj, long defaultValue) {
         long longValue = defaultValue;
         if (obj != null) {
             String strValue = castString(obj);
@@ -46,7 +46,7 @@ public final class CastUtil {
         return longValue;
     }
 
-    public static double castLong(Object obj) {
+    public static long castLong(Object obj) {
         return CastUtil.castLong(obj, 0);
     }
 

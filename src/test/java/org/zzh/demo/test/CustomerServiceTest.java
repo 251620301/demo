@@ -3,9 +3,13 @@ package org.zzh.demo.test;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import org.zzh.demo.helper.DatabaseHelper;
 import org.zzh.demo.model.Customer;
 import org.zzh.demo.service.CustomerService;
 
+import java.io.BufferedReader;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -22,12 +26,12 @@ public class CustomerServiceTest {
 
     @Before
     public void init(){
-
+        DatabaseHelper.executeSqlFile("sql/customer_init.sql");
     }
 
     @Test
     public void getCustomerListTest() {
-        List<Customer> customerList = customerService.getCustomerList("");
+        List<Customer> customerList = customerService.getCustomerList();
         Assert.assertEquals(2,customerList.size());
     }
 
@@ -39,7 +43,7 @@ public class CustomerServiceTest {
     }
 
     @Test
-    public void creatCustomerTest() {
+    public void createCustomerTest() {
         Map<String,Object> fieldMap = new HashMap<String, Object>();
         fieldMap.put("name","customer100");
         fieldMap.put("contact","John");
